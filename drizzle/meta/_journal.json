@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707942525284,
+      "tag": "0000_lucky_landau",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1707942683202,
+      "tag": "0001_bitter_wendell_vaughn",
+      "breakpoints": true
+    }
+  ]
+}
