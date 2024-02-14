@@ -15,6 +15,20 @@
       "when": 1707942683202,
       "tag": "0001_bitter_wendell_vaughn",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1707943239005,
+      "tag": "0002_silent_magus",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1707943333470,
+      "tag": "0003_white_romulus",
+      "breakpoints": true
     }
   ]
 }
