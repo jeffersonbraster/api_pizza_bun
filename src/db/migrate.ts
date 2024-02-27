@@ -9,9 +9,14 @@ const connection = postgres(env.DATABASE_URL, { max: 1 })
 const db = drizzle(connection)
 
 await migrate(db, { migrationsFolder: 'drizzle' })
-
-console.log(chalk.greenBright('Migrations ran successfully'))
-
-await connection.end()
-
-process.exit()
+  .then(() => {
+    console.log(chalk.greenBright('Migrations ran successfully'))
+    process.exit()
+  })
+  .catch((error) => {
+    console.log(chalk.redBright('Error running migrations', error))
+    process.exit(1)
+  })
+  .finally(async () => {
+    await connection.end()
+  })

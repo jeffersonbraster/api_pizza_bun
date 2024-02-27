@@ -1,7 +1,8 @@
 {
   "name": "pizzashop-bun",
-  "module": "index.ts",
+  "module": "./src/http/server.ts",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "lint": "eslint --fix src --ext ts",
     "dev": "bun --watch src/http/server.ts",
@@ -30,5 +31,10 @@
     "elysia": "^0.8.17",
     "postgres": "^3.4.3",
     "zod": "^3.22.4"
+  },
+  "author": {
+    "name": "Jefferson Brandão",
+    "email": "jeffersonbraster@gmail.com",
+    "url": "https://jeffersonbrandao.com.br"
   }
 }
