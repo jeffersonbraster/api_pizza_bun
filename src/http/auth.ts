@@ -16,7 +16,7 @@ export const auth = new Elysia()
     }),
   )
   .use(cookie())
-  .derive(({ jwt, setCookie, removeCookie }) => {
+  .derive(({ jwt, setCookie, removeCookie, cookie }) => {
     return {
       signUser: async (payload: Static<typeof jwtPayload>) => {
         const token = await jwt.sign(payload)
@@ -26,6 +26,19 @@ export const auth = new Elysia()
           maxAge: 60 * 60 * 24 * 7, // 7 days
           path: '/',
         })
+      },
+
+      getCurrentUser: async () => {
+        const payload = await jwt.verify(cookie.auth)
+
+        if (!payload) {
+          throw new Error('Invalid token')
+        }
+
+        return {
+          userId: payload.sub,
+          restaurantId: payload.restaurantId,
+        }
       },
 
       signOut: () => {
